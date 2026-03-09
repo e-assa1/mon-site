@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty Shop - Produits de beauté premium</title>
+<meta name="description" content="Découvrez Beauty Shop, votre boutique en ligne de produits de beauté premium avec des offres exclusives et une réduction sur votre premier achat.">
+<meta name="keywords" content="beauté, maquillage, parfums, cosmétiques, boutique en ligne">
+<link rel="canonical" href="https://votre-site.com/">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Beauty Shop - Produits de beauté premium">
+<meta property="og:description" content="Découvrez Beauty Shop, votre boutique en ligne de produits de beauté premium avec des offres exclusives.">
+<meta property="og:image" content="https://example.com/og-image.jpg">
+<meta property="og:url" content="https://votre-site.com">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beauty Shop - Produits de beauté premium">
+<meta name="twitter:description" content="Découvrez Beauty Shop, votre boutique en ligne de produits de beauté premium avec des offres exclusives.">
+<meta name="twitter:image" content="https://example.com/og-image.jpg">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<noscript>
+    <div style="background:#ffdddd;color:#900;padding:10px;text-align:center;">
+        JavaScript est requis pour voir ce site correctement. Veuillez activer JavaScript ou utiliser un navigateur moderne.
+    </div>
+</noscript>
+
+<header>
+    <nav class="navbar">
+        <h1 class="logo">BEAUTY</h1>
+
+        <ul class="nav-links" id="menu">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#produits">Produits</a></li>
+            <li><a href="#nouveautes">Nouveautés</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </nav>
+</header>
+
+<!-- Cart icon bottom-right -->
+<div class="cart-icon" onclick="toggleCart()">
+    🛒 <span id="cart-count">0</span>
+</div>
+
+<!-- Cart panel -->
+<div id="cart-panel" class="cart-panel">
+    <h2>Mon panier</h2>
+    <ul id="cart-items"></ul>
+    <p>Total : <span id="cart-total">0</span> FCFA</p>
+    <button id="checkout-btn">Passer commande</button>
+    <button onclick="toggleCart()">Fermer</button>
+</div>
+
+<section id="home" class="hero">
+    <div id="promo" class="promo-banner">
+        <span id="promo-text">10% de réduction sur votre premier achat ! 🎉</span>
+        <span id="promo-countdown"></span>
+    </div>
+    <div class="hero-text">
+        <h2 id="hero-heading"></h2>
+        <p>Découvrez nos produits premium</p>
+        <button id="shop-now">Acheter maintenant</button>
+    </div>
+</section>
+
+<section id="produits" class="products">
+    <h2>Produits populaires</h2>
+
+    <div class="product-grid">
+
+        <div class="card" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400" alt="Rouge à lèvres">
+            <h3>Rouge à lèvres</h3>
+            <p>15 000 FCFA</p>
+            <button class="add-cart">Ajouter</button>
+        </div>
+
+        <div class="card" tabindex="0">
+            <img src="images/Parfum Luxe.jpg" alt="Parfum Luxe">
+            <h3>Parfum Luxe</h3>
+            <p>45 000 FCFA</p>
+            <button class="add-cart">Ajouter</button>
+        </div>
+
+        <div class="card" tabindex="0">
+            <img src="images/Fond de teint.webp" alt="Fond de teint">
+            <h3>Fond de teint</h3>
+            <p>20 000 FCFA</p>
+            <button class="add-cart">Ajouter</button>
+        </div>
+
+        <div class="card" tabindex="0">
+            <img src="images/Palette Makeup.jpeg" alt="Palette Makeup">
+            <h3>Palette Makeup</h3>
+            <p>30 000 FCFA</p>
+            <button class="add-cart">Ajouter</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="nouveautes" class="banner">
+    <h2>-30% sur les nouveautés</h2>
+    <p class="sub-banner">Profitez des dernières tendances à prix réduits</p>
+    <div class="product-grid nouveautes-grid">
+        <div class="card" tabindex="0">
+            <img src="images/Crème visage.webp" alt="Crème visage">
+            <h3>Crème visage</h3>
+            <p>25 000 FCFA</p>
+            <button class="add-cart">Ajouter</button>
+        </div>
+        <div class="card" tabindex="0">
+            <img src="images/Sérum anti-âge.webp" alt="Sérum anti-âge">
+            <h3>Sérum anti-âge</h3>
+            <p>35 000 FCFA</p>
+            <button class="add-cart">Ajouter</button>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <h2>Contactez-nous</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <a href="tel:+22501016376" class="info-box">
+                <span class="icon">📞</span>
+                <p><strong>Téléphone</strong></p>
+                <p>+225 01 01 16 63 76</p>
+            </a>
+            <div class="info-box">
+                <span class="icon">📬</span>
+                <p><strong>Email</strong></p>
+                <p>contact@beautyshop.ci</p>
+            </div>
+            <a href="https://www.google.com/maps/place/Pharmacie+Notre+Dame+de+la+PIETE/@5.3337068,-4.0048353,17z/data=!3m1!4b1!4m6!3m5!1s0xfc1eb9b7e9c1741:0x2875bf41f09baba4!8m2!3d5.3337015!4d-4.0002219!16s%2Fg%2F11csqpc_wl?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="info-box">
+                <span class="icon">📍</span>
+                <p><strong>Localisation</strong></p>
+                <p>Abidjan, Côte d'Ivoire</p>
+            </a>
+        </div>
+        <form id="contact-form" class="contact-form">
+            <input type="text" placeholder="Votre nom" required>
+            <input type="email" placeholder="Votre email" required>
+            <textarea placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+    </div>
+    <!-- customer feedback -->
+    <div class="feedback">
+        <h3>Donnez votre avis</h3>
+        <textarea id="feedback-text" placeholder="Vos commentaires" rows="4" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:5px;"></textarea>
+        <button id="feedback-submit" style="margin-top:10px;padding:10px 20px;background:#ff2e63;color:#fff;border:none;border-radius:5px;cursor:pointer;">Envoyer</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Beauty Shop - Tous droits réservés</p>
+    <div class="share-links">
+        <a href="https://www.facebook.com/profile.php?id=100067935093261&locale=fr_FR" target="_blank">Partager sur Facebook</a> |
+        <a href="#" 
+</footer>
+<!-- Newsletter modal -->
+<div id="newsletter-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>Reçois 15% sur ta prochaine commande</h3>
+        <p>Inscris-toi à notre newsletter :</p>
+        <input type="email" id="newsletter-email" placeholder="Ton email" />
+        <button id="newsletter-submit">S'inscrire</button>
+    </div>
+</div>
+
+<script src="script.js" defer></script>
+
+<!-- Google Analytics -->
+<script>
+  // place your GA tracking ID below
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-XXXXXX-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
