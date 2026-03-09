@@ -99,9 +99,36 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartDisplay();
     }
 
+    // utility for closing when clicking outside
+    function outsideClickListener(e) {
+        if (!cartPanel.contains(e.target) && !document.querySelector('.cart-icon').contains(e.target)) {
+            cartPanel.classList.remove('open');
+            document.removeEventListener('click', outsideClickListener);
+        }
+    }
+
     window.toggleCart = function() {
+        console.log('toggleCart called');
+        const wasOpen = cartPanel.classList.contains('open');
         cartPanel.classList.toggle('open');
+        if (!wasOpen) {
+            // panel has been opened
+            document.addEventListener('click', outsideClickListener);
+            // prevent clicks inside panel from bubbling to document
+            cartPanel.addEventListener('click', function(e){ e.stopPropagation(); });
+        } else {
+            document.removeEventListener('click', outsideClickListener);
+        }
     };
+
+    // also bind the close icon just in case
+    const closeIcon = cartPanel.querySelector('.close-cart');
+    if (closeIcon) {
+        closeIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleCart();
+        });
+    }
 
     checkoutBtn.addEventListener('click', () => {
         if (cart.length === 0) {

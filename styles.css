@@ -580,11 +580,32 @@ margin-top:40px;
 
 /* cart panel width should adapt on small screens */
 .cart-panel{
-    width:90%;
-    max-width:400px;
+    /* position the panel in lower right corner with smaller footprint */
+    width:70%;
+    max-width:280px;
     font-size:0.9rem; /* slightly smaller text for better fit */
-    height:80%; /* don't fill entire viewport height */
-    bottom:10%; /* leave a gap at bottom */
+    height:60%; /* shorter panel */
+    right:-100%;   /* start hidden offscreen */
+    bottom:10px;   /* float from bottom edge */
+    position:fixed;
+    transition: right 0.3s;
+}
+
+/* adjust open state to slide in but still keep some margin */
+.cart-panel.open{
+    right:10px;
+}
+
+/* close button inside cart panel */
+.cart-panel .close-cart{
+    position:absolute;
+    top:10px;
+    right:10px;
+    font-size:20px;
+    cursor:pointer;
+    color:#ff2e63;
+    background:transparent;
+    border:none;
 }
 
 .nav-links{
